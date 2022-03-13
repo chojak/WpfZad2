@@ -1,0 +1,117 @@
+﻿<Window x:Class="WpfZad2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfZad2"
+        mc:Ignorable="d"
+        Title="Prenumerata" Height="450" Width="800"
+        FontSize="20">
+    <StackPanel>
+        <StackPanel.Resources>
+            <Style TargetType="{x:Type Grid}">
+                <Setter Property="Margin" Value="5"/>
+            </Style>
+            <Style TargetType="{x:Type Label}">
+                <Setter Property="Margin" Value="2"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+            </Style>
+            <Style TargetType="{x:Type TextBox}">
+                <Setter Property="Margin" Value="2"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+            </Style>
+            <Style TargetType="{x:Type RadioButton}">
+                <Setter Property="Margin" Value="2"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+            </Style>
+            <Style TargetType="{x:Type StackPanel}">
+                <Setter Property="Margin" Value="1"/>
+            </Style>
+            <Style TargetType="{x:Type CheckBox}">
+                <Setter Property="Margin" Value="10,10,10,10"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+            </Style>
+        </StackPanel.Resources>
+        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            
+            <Label Grid.Column="0" HorizontalAlignment="Left">Zamawiający: </Label>
+            <TextBox Grid.Column="1" Background="Green" VerticalContentAlignment="Center"></TextBox>
+            <Button Grid.Column="2" Padding="10, 0, 10, 0">...</Button>
+        </Grid>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <GroupBox Grid.Column="0" Header="Numer prenumeraty">
+                <StackPanel>
+                    <RadioButton>Trzymiesięczna</RadioButton>
+                    <RadioButton>Półroczna</RadioButton>
+                    <RadioButton>Roczna</RadioButton>
+                    <RadioButton>Dwuletnia</RadioButton>
+                </StackPanel>
+            </GroupBox>
+            
+            <GroupBox Header="Adres" Grid.Column="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    
+                    <Label>Ulica: </Label>
+                    <TextBox Grid.Column="1" Background="Green"></TextBox>
+
+                    <TextBox Grid.Row="1" Grid.Column="1" Background="LightGreen"></TextBox>
+
+                    <Grid Grid.Row="2" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto" MinWidth="100"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0">Kod: </Label>
+                        <TextBox Grid.Column="1" Background="Green"></TextBox>
+                        <Label Grid.Column="2">Poczta:</Label>
+                        <TextBox Grid.Column="3" Background="Green"></TextBox>
+                    </Grid>
+                </Grid>
+            </GroupBox>
+        </Grid>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0">Zgoda na:</Label>
+            <CheckBox Grid.Column="1">przetwarzanie danych</CheckBox>
+            <CheckBox Grid.Column="2">otrzymywanie ofert</CheckBox>
+        </Grid>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0">Uwagi:</Label>
+            <TextBox Grid.Column="1"></TextBox>
+        </Grid>
+    </StackPanel>
+</Window>
